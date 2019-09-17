@@ -1,0 +1,25 @@
+.columns {
+    display: flex;
+    padding-left: 10%;
+}
+
+.image1 {
+    width: auto;
+    height: auto;
+    align-content: center;
+}
+
+.image2 {
+    width: 83%;
+    height: auto;
+    align-content: center;
+}
+
+.column {
+    font-size: 30px;
+}
+
+body {
+    background-color: rgb(219, 219, 219);
+    
+}
