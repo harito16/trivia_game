@@ -1,3 +1,14 @@
+// function timer() {
+//     setTimeout(function(){
+// document.querySelector("#timer")
+// }, 15000);
+// }
+
+let currentQuestionIndex = 0;
+let previousQuestionIndex = 0;
+
+
+// These are where the questions for the Old testament are stored.
 let questionsOld = [
     {
         question: 'Why does Cain kill his brother Abel?',
@@ -6,7 +17,9 @@ let questionsOld = [
             'Abel was getting the inheritance', 
             'The angel said so', 
             'God was more pleased by Abel\'s sacrifice than by Cain\'s'
-        ]
+        ],
+        rightAnswer: 'God was more pleased by Abel\'s sacrifice than by Cain\'s'
+        
     },
     {
         question: 'How does Jacob steal his brother, Esau\'s, inheritance rights?',
@@ -15,7 +28,8 @@ let questionsOld = [
             'He tricked his father with his mother\'s help', 
             'He got a judge to do it for him', 
             'By killing his brother'
-        ]
+        ], 
+        rightAnswer: 'He tricked his father with his mother\'s help'
     },
     {
         question: 'From which catastrophe does Joseph save Egypt?',
@@ -24,7 +38,8 @@ let questionsOld = [
             'From the furious Red Sea', 
             'From a sandstorm', 
             'From famine'
-        ]
+        ],
+        rightAnswer: 'From famine'
     },
     {
         question: 'How does God first appear to Moses?',
@@ -33,7 +48,8 @@ let questionsOld = [
             'As talking sand', 
             'As a cloud', 
             'As a burning bush'
-        ]
+        ],
+        rightAnswer: 'As a burning bush'
     },
     {
         question: 'What object that God gives Moses allows him to perform signs and wonders?',
@@ -42,7 +58,8 @@ let questionsOld = [
             'A wooden staff', 
             'A serpent', 
             'The Ten Commandments'
-        ]
+        ],
+        rightAnswer: 'A wooden staff'
     },
     {
         question: 'How does God feed the Israelites in the desert?',
@@ -51,7 +68,8 @@ let questionsOld = [
             'Fishes', 
             'Manna', 
             'Beef'
-        ]
+        ],
+        rightAnswer: 'Manna'
     },
     {
         question: 'Why does Moses break the stone tablets inscribed with God\'s commandments at Mount Sinai?',
@@ -60,7 +78,8 @@ let questionsOld = [
             'His people told him to', 
             'He didn\'t want to follow them', 
             'His people were worshipping golden statues'
-        ]
+        ],
+        rightAnswer: 'His people were worshipping golden statues'
     },
     {
         question: 'Why does God curse the Israelities to wander the deser for forty years before entering the Promised Land?',
@@ -69,7 +88,8 @@ let questionsOld = [
             'Israelities didn\'t know how to read a map', 
             'Moses didn\'t know where to go',
             'They lost their camels when exiting Egypt'
-        ]
+        ],
+        rightAnswer: 'Israelities didn\'t have faith'
     },
     {
         question: 'Who betrays Samson to the Philistines?',
@@ -78,7 +98,8 @@ let questionsOld = [
             'Rebecca', 
             'Jezebel', 
             'Delilah'
-        ]
+        ],
+        rightAnswer: 'Delilah'
     },
     {
         question: 'Why does the prophet Nathan rebuke David?',
@@ -87,7 +108,8 @@ let questionsOld = [
             'David commits murder', 
             'David commits adultery', 
             'David kills Goliath'
-        ]
+        ],
+        rightAnswer: 'David commits adultery'
     },
     {
         question: 'What does David bring to Jerusalem to bless the religious city?',
@@ -96,7 +118,8 @@ let questionsOld = [
             'Holy bread', 
             'The Ark of the Covenant', 
             'A wooden staff'
-        ]
+        ],
+        rightAnswer: 'The Ark of the Covenant'
     },
     {
         question: 'Who is Elisha?',
@@ -105,7 +128,8 @@ let questionsOld = [
             'Joseph\'s apprentice and successor', 
             'Elijah\'s apprentice and successor', 
             'Abraham\'s apprentice and successor'
-        ]
+        ],
+        rightAnswer: 'Elijah\'s apprentice and successor'
     },
     {
         question: 'Which Jwish fesitval results form the events in Esther?',
@@ -114,7 +138,8 @@ let questionsOld = [
             'Purim', 
             'Shabbat', 
             'Hanukkah'
-        ]
+        ],
+        rightAnswer: 'Purim'
     },
     {
         question: 'What does King Solomon do in Israel?',
@@ -123,7 +148,8 @@ let questionsOld = [
             'He bakes bread', 
             'He brings treasures from around the world', 
             'He builds the grand temple'
-        ]
+        ],
+        rightAnswer: 'He builds the grand temple'
     },
     {
         question: 'What is one of the main criteria in Leviticus for living in the Israelite camp?',
@@ -132,7 +158,8 @@ let questionsOld = [
             'To be ceremonially clean', 
             'To have children', 
             'To know how to pray'
-        ]
+        ],
+        rightAnswer: 'To be ceremonially clean'
     },
     {
        question:  'Why does God reprimand Job?',
@@ -141,7 +168,8 @@ let questionsOld = [
         'He ate too much meat', 
         'He didn\'t pray everyday',
         'He listened the advice of this frineds'
-       ]
+       ],
+       rightAnswer: 'He listened the advice of this frineds'
     },
     {
         question: 'What did King Solomon ask for from God?',
@@ -150,7 +178,8 @@ let questionsOld = [
             'Solomon asked for gold',
             'Solomon asked for a wife', 
             'Solomon asked for wisdom'
-        ]
+        ],
+        rightAnswer: 'Solomon asked for wisdom'
     },
     {
         question: 'Who wrote this line \'The Lord is my Shepherd, I shall not want\'?',
@@ -159,7 +188,8 @@ let questionsOld = [
             'Abraham',
             'King David',
             'King Solomon'
-        ]
+        ],
+        rightAnswer: 'King David'
     },
     {
         question: 'What does \'Eve\' mean?',
@@ -167,8 +197,9 @@ let questionsOld = [
             'Daughter of God',
             'Mother of all living',
             'Disobedience', 
-            'Humble'
-        ]
+            'Humbleness'
+        ],
+        rightAnswer: 'Mother of all living'
     },
     {
         question: 'Who married Abraham?',
@@ -177,8 +208,72 @@ let questionsOld = [
             'Esther',
             'Sarah',
             'Ruth'
-        ]
+        ],
+        rightAnswer: 'Sarah'
     }
 
-]
+];
 
+
+console.log(questionsOld[0].rightAnswer);
+
+
+
+
+
+let quest = document.getElementById("questions")
+
+    for(let i = 0; i < questionsOld.length; i++){
+       let h1 = document.createElement("p")
+        h1.innerHTML = questionsOld[i].question
+        quest.appendChild(h1)
+            for(let j = 0; j < questionsOld[i].answers.length; j++){
+                let buttons = document.createElement("button")
+                buttons.innerText = questionsOld[i].answers[j];
+                h1.appendChild(buttons);
+            }
+    };
+
+    
+    // let item = questionsOld[Math.floor(Math.random()*questionsOld.length)];
+    // console.log(item);
+
+
+
+
+
+
+
+
+// let quest = document.getElementById("questions")
+
+// questionsOld.forEach(theQuestion);
+
+
+// function theQuestion (q){
+//     document.getElementById("questions").innerText = q;
+// }
+
+
+
+// Array.from(document.getElementById("questions")).forEach(theQuestion => {
+//     let h1 = document.createElement("h1")
+//     h1.innerText = theQuestion.innerText;
+//     questions.appendChild(h1);
+// })
+
+
+
+
+
+
+
+
+// Variables and Constants
+
+
+/*
+questionDisplay = document.getElementsByClassName('questions');
+gameIndex = 0;
+gameQuestions = [];
+*/
