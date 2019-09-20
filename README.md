@@ -29,6 +29,12 @@
 ## Website
 [The Bible Trivia Game](https://harito16.github.io/trivia_game/)
 
+## Unsolved Problems
+
+* Need to be able to show only one question at a time. 
+* Add a timer to the game
+
+
 ## Credits
 * Thanks to the GA family on the input and help with this project. 
 * Special thanks to Bonnie for support.
