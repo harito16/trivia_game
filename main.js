@@ -1,13 +1,3 @@
-// function timer() {
-//     setTimeout(function(){
-// document.querySelector("#timer")
-// }, 15000);
-// }
-
-let currentQuestionIndex = 0;
-let previousQuestionIndex = 0;
-
-
 // These are where the questions for the Old testament are stored.
 let questionsOld = [
     {
@@ -214,10 +204,6 @@ let questionsOld = [
 
 ];
 
-
-
-
-
 let quest = document.getElementById("questions")
 
     for(let i = 0; i < questionsOld.length; i++){
@@ -241,58 +227,8 @@ let quest = document.getElementById("questions")
 if (e.target.classList.contains("rightAnswer")) {
         alert("You got the right answer")
        let score = document.getElementById("score");
-       score.innerHTML = ++scoreValue;
+       score.innerText = `This is your score: ${++scoreValue}` ;
  } else {
             alert ("Keep trying")
  }
 };
-
-
-
-
-    
-
-
-    
-    // let item = questionsOld[Math.floor(Math.random()*questionsOld.length)];
-    // console.log(item);
-
-
-
-
-
-
-
-
-// let quest = document.getElementById("questions")
-
-// questionsOld.forEach(theQuestion);
-
-
-// function theQuestion (q){
-//     document.getElementById("questions").innerText = q;
-// }
-
-
-
-// Array.from(document.getElementById("questions")).forEach(theQuestion => {
-//     let h1 = document.createElement("h1")
-//     h1.innerText = theQuestion.innerText;
-//     questions.appendChild(h1);
-// })
-
-
-
-
-
-
-
-
-// Variables and Constants
-
-
-/*
-questionDisplay = document.getElementsByClassName('questions');
-gameIndex = 0;
-gameQuestions = [];
-*/
