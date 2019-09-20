@@ -215,9 +215,6 @@ let questionsOld = [
 ];
 
 
-console.log(questionsOld[0].rightAnswer);
-
-
 
 
 
@@ -229,10 +226,32 @@ let quest = document.getElementById("questions")
         quest.appendChild(h1)
             for(let j = 0; j < questionsOld[i].answers.length; j++){
                 let buttons = document.createElement("button")
+                 
                 buttons.innerText = questionsOld[i].answers[j];
+                if (buttons.innerText == questionsOld[i].rightAnswer) {
+                    buttons.setAttribute("class", "rightAnswer");
+                }
                 h1.appendChild(buttons);
+                buttons.addEventListener('click', compareAnswer);
             }
     };
+    let scoreValue = 0;
+    function compareAnswer(e) {
+        // console.log(e.target.classList.contains("rightAnswer"));
+if (e.target.classList.contains("rightAnswer")) {
+        alert("You got the right answer")
+       let score = document.getElementById("score");
+       score.innerHTML = ++scoreValue;
+ } else {
+            alert ("Keep trying")
+ }
+};
+
+
+
+
+    
+
 
     
     // let item = questionsOld[Math.floor(Math.random()*questionsOld.length)];
