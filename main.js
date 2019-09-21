@@ -1,3 +1,5 @@
+
+
 // These are where the questions for the Old testament are stored.
 let questionsOld = [
     {
@@ -204,30 +206,33 @@ let questionsOld = [
 
 ];
 
-let quest = document.getElementById("questions")
+let quest = document.getElementById("questions")  //Variable to get the element questions from the HTML
 
+// Function to loop through the array of questions and append them to the newly created "p" elemnt.
     for(let i = 0; i < questionsOld.length; i++){
        let h1 = document.createElement("p")
         h1.innerHTML = questionsOld[i].question
         quest.appendChild(h1)
-            for(let j = 0; j < questionsOld[i].answers.length; j++){
-                let buttons = document.createElement("button")
+
+        //loop to iterate through the answers.
+            for(let j = 0; j < questionsOld[i].answers.length; j++){  
+                let buttons = document.createElement("button")  //create element button
                  
-                buttons.innerText = questionsOld[i].answers[j];
+                buttons.innerText = questionsOld[i].answers[j]; //comparing the buttons to the right answer inside the array.
                 if (buttons.innerText == questionsOld[i].rightAnswer) {
                     buttons.setAttribute("class", "rightAnswer");
                 }
-                h1.appendChild(buttons);
-                buttons.addEventListener('click', compareAnswer);
+                h1.appendChild(buttons);  
+                buttons.addEventListener('click', compareAnswer);  //event listener to buttons to run the compareAnswer function.
             }
     };
-    let scoreValue = 0;
-    function compareAnswer(e) {
+    let scoreValue = 0;           
+    function compareAnswer(e) {       //function that compares the event of the rightAnswer button.
         // console.log(e.target.classList.contains("rightAnswer"));
-if (e.target.classList.contains("rightAnswer")) {
+if (e.target.classList.contains("rightAnswer")) {          //output to the user to know if he got the right or wrong answer.
         alert("You got the right answer")
        let score = document.getElementById("score");
-       score.innerText = `This is your score: ${++scoreValue}` ;
+       score.innerText = `This is your score: ${++scoreValue}` ;  //adds to the score as the user gets the right answer.
  } else {
             alert ("Keep trying")
  }
